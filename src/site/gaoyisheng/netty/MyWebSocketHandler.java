@@ -45,7 +45,7 @@ import io.netty.util.CharsetUtil;
 public class MyWebSocketHandler extends SimpleChannelInboundHandler<Object>{
 
 	private WebSocketServerHandshaker handshaker;
-	private static final String WEB_SOCKET_URL = "ws://localhost:8080/websocket";
+	private static final String WEB_SOCKET_URL = "ws://localhost:8888/websocket";
 	
 	/**
 	 * 客户端与服务端创建连接的时候调用.

@@ -29,9 +29,11 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 public class Main {
 	
-	private static final int PORT = 8080;
+//	private static final int PORT = 8888;
 	
 	public static void main(String[] arg0) {
+		int PORT = 8888;
+		
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workGroup = new NioEventLoopGroup();
 
@@ -41,7 +43,6 @@ public class Main {
 			b.channel(NioServerSocketChannel.class);
 			b.childHandler(new MyWebSocketChannelHandler());
 			System.out.println("服务端开启等待客户端连接...");
-			b.bind(PORT).sync().channel();
 			Channel ch = b.bind(PORT).sync().channel();
 			ch.closeFuture().sync();
 			
